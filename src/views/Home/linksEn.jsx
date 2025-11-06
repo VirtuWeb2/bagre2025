@@ -4,7 +4,7 @@ import linksEn from "@components/Footer/enMunicipais.js";
 
 const CarouselLinks = () => {
   // Duplicamos a lista para criar o efeito contínuo
-  const doubledList = [...linksEn, ...linksEn,...linksEn,...linksEn];
+  const doubledList = [...linksEn, ...linksEn,...linksEn,...linksEn,...linksEn,...linksEn,...linksEn];
 
   return (
     <div className="relative overflow-hidden bg-gray-100 py-4 carousel">

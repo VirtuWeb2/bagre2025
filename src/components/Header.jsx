@@ -57,7 +57,7 @@ const filterBannerPosition = (position) => {
 
   return (
     <header className="cabecalho">
-      <img src="/images/ABAETETUBA.png"  alt="" />
+      <img src="/images/BAGRE.png"  alt="" />
       <div className="bg-red-700 py-[1rem] relative header ">
         <nav className="flex container-width items-center">
           <button
