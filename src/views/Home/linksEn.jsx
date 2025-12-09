@@ -7,7 +7,7 @@ const CarouselLinks = () => {
   const doubledList = [...linksEn, ...linksEn,...linksEn,...linksEn,...linksEn,...linksEn,...linksEn];
 
   return (
-    <div className="relative overflow-hidden bg-gray-100 py-4 carousel">
+    <div className="relative overflow-hidden bg-gray-100 py-4 mt-8 carousel">
       <div className="flex animate-scroll gap-8 carousel ">
         {doubledList.map((linken, index) => (
           <a

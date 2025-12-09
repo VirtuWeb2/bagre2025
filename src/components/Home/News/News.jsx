@@ -78,7 +78,7 @@ const News = ({ news, isLoading, title, flex }) => {
                       width={200}
                       height={200}
                       loading="lazy"
-                      className="min-h-[200px] max-h-[200px] w-full object-cover mb-[1.2rem] rounded-md shadow-md"
+                      className="min-h-[200px] max-h-[200px] w-full object-fill mb-[1.2rem] rounded-md shadow-md"
                     />
                     <div className="flex gap-[.5rem] capitalize text-red-600 text-[1.6rem] font-semibold mb-[.8rem]">
                       <span className="">{n.muni}</span>
@@ -93,7 +93,7 @@ const News = ({ news, isLoading, title, flex }) => {
                         "dddd, D [de] MMMM [de] YYYY"
                       )}
                     </span> */}
-                    <div className="mt-auto flex gap-[.5rem] justify-end items-center">
+                    <div className=" flex gap-[.5rem] justify-end items-center">
                       <button
                         aria-label="Compartilhar notícia no facebook"
                         title="Compartilhar notícia no facebook"
@@ -107,9 +107,9 @@ const News = ({ news, isLoading, title, flex }) => {
                         }}
                       >
                         <img
-                          src="/icons/facebook.svg"
-                          width={24}
-                          height={24}
+                          src="/icons/face.svg"
+                          width={28}
+                          height={28}
                           alt=""
                         />
                       </button>
@@ -126,7 +126,7 @@ const News = ({ news, isLoading, title, flex }) => {
                         }}
                       >
                         <img
-                          src="/icons/whatsapp.svg"
+                          src="/icons/wpp.svg"
                           width={24}
                           height={24}
                           alt=""
@@ -141,7 +141,7 @@ const News = ({ news, isLoading, title, flex }) => {
                         <MessageCircle />
                       </button> */}
                       <button
-                        className="text-neutral-600"
+                        className="text-neutral-100"
                         onClick={(e) => {
                           e.preventDefault();
                           navigator.share({

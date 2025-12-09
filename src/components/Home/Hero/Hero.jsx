@@ -2,10 +2,26 @@ import { Link } from "react-router-dom";
 import "./hero.css"
 import dayjs from "@utils/dayjs"
 import gsap from "gsap"
-import { useEffect } from "react";
+import axios from "axios";
+import { useEffect,useState } from "react";
 import { Share2 } from "lucide-react";
 const Hero = ({ news, isLoading }) => {
+ const [ads,setAds] = useState([]);
+  useEffect(() => {
+    const getAds = async () => {
+      try {
+        const res = await axios.get("https://api-sites-en.vercel.app/ad");
+        const filteredAds = res.data.filter(
+          (ad) => ad.position === "banner hero"
+        );
+        setAds(filteredAds);
+      } catch (err) {
+        console.error("Erro ao buscar ads:", err);
+      }
+    };
 
+    getAds();
+  }, []);
   useEffect(()=>{
     if (!isLoading) {
       gsap.fromTo('[data-animate="noticias-hero"]', {opacity:0, x: -12}, {opacity: 1, x: 0, stagger: .1});
@@ -57,7 +73,7 @@ const Hero = ({ news, isLoading }) => {
               >
                 <img
                   src={n.cover}
-                  className={` w-full object-cover rounded-md max-lg:min-h-[200px] max-lg:mb-[1rem] ${
+                  className={` w-full object-fill rounded-md max-lg:min-h-[200px] max-lg:mb-[1rem] ${
                     index != 0
                       ? " lg:max-w-[200px] lg:min-w-[200px] lg:min-h-[140px] lg:max-h-[140px]"
                       : "md:min-h-[400px] md:max-h-[400px] mb-[1rem] lg:max-h-[300px] lg:min-h-[300px]"
@@ -73,8 +89,8 @@ const Hero = ({ news, isLoading }) => {
                       index != 0 ? "lg:text-[1.5rem]" : "lg:text-[2rem]"
                     }`}
                   >
-                    <span>{n.muni}</span>
-                    <span>|</span>
+                    {/* <span>{n.muni}</span>
+                    <span>|</span> */}
                     <span>{n.cat}</span>
                   </div>
                   <h1 className="text-neutral-800">{n.title}</h1>
@@ -82,7 +98,7 @@ const Hero = ({ news, isLoading }) => {
                     <p
                       className="text-[2rem] leading-9"
                       dangerouslySetInnerHTML={{
-                        __html: n.desc.substring(0, 160) + "...",
+                        __html: n.desc.substring(0, 375) +  `<span  class="vermais">...ver mais</span>`,
                       }}
                     ></p>
                   )}
@@ -158,6 +174,20 @@ const Hero = ({ news, isLoading }) => {
             );
           })}
         </div>
+        <section className="hero-ads">
+        <div className="containerAds">
+          {ads.map((ad) => (
+            <a
+              href={ad.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={ad.id}
+            >
+              <img src={ad.cover} alt={ad.title} className="hero-ad-banner" />
+            </a>
+          ))}
+        </div>
+      </section>
         {/* <div className="grid-2 ">
           {news.slice(4, 7).map((n, index) => {
             return (

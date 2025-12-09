@@ -9,5 +9,6 @@ export default defineConfig({
       "@components": path.resolve(__dirname, "src/components/"),
       "@utils": path.resolve(__dirname, "src/utils/"),
     },
+    assetsInclude:["**/*.woff","**/*.woff2"],
   },
 });

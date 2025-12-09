@@ -9,8 +9,8 @@ const VideoBox = ({ link, title }) => {
   return (
     <div
       style={{
-        width: "300px",
-        height: "300px",
+        width: "340px",
+        height: "194px",
         border: "2px solid #000",
         overflow: "hidden",
         borderRadius: "8px",

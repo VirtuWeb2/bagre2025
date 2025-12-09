@@ -157,7 +157,7 @@ const Noticia = ({ tvPosts, loadingPosts }) => {
                 <img
                   src={noticia.cover}
                   alt=""
-                  className="max-h-[60vh] w-full object-cover rounded-md shadow-md mb-[2rem]"
+                  className="max-h-[60vh] w-full object-fill rounded-md shadow-md mb-[2rem]"
                   data-animate="noticia"
                 />
                 <div

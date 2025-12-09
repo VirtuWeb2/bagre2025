@@ -1,6 +1,14 @@
 main .grid-1 {
   gap: 2rem;
 }
+.vermais {
+  color: #005bff; /* muda a cor */
+  font-weight: bold;
+  cursor: pointer;
+}
+.containerAds img{
+  margin: 3rem auto ; 
+}
 
 main .grid-1 a:nth-child(1) {
   grid-row: span 4;

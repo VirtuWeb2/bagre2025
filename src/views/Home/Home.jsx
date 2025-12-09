@@ -31,33 +31,45 @@ const Home = ({ news, loadingNews, loadingTvPosts, tvPosts }) => {
           <div className="container-home container-width">
             <div className="overflow-hidden">
               <Hero news={news} isLoading={loadingNews} />
-                <News 
+                <div className="cardUltimas">
+                   <News 
                 news={news?.sort((a, b) => b.id - a.id).slice(0, 20)}
                 isLoading={loadingNews}
                 title={<h1 className="news-title">Últimas Notícias</h1>}
                 />
-                
-            
+                </div>
+                <br/>
+                <div className="cardPolitica">
               <News
-                news={news?.filter((n) => n.cat === "política").slice(0, 20)}
-                 isLoading={loadingNews}
+                news={news?.filter(n=> n.cat === "política").slice(0, 20)}
+                isLoading={loadingNews}
                 title={<h1 className="news-title">Política</h1>}
               />
+                </div>
+              <br/>
+              <div className="cardSeguranca">
               <News
-                news={news?.filter((n) => n.cat === "segurança").slice(0, 20)}
+                news={news?.filter(n=> n.cat === "segurança").slice(0, 20)}
                 isLoading={loadingNews}
                 title={<h1 className="news-title">Segurança</h1>}
               />
+              </div>
+              <br/>
+              <div className="cardEsportes">
               <News
-                news={news?.filter((n) => n.cat === "esportes").slice(0, 20)}
+                news={news?.filter(n=> n.cat === "esportes").slice(0, 20)}
                 isLoading={loadingNews}
                 title={<h1 className="news-title">Esportes</h1>}
               />
-                <News
-                  news={news?.filter((n) => n.cat === "foco").slice(0, 20)}
-                  isLoading={loadingNews}
-                  title={<h1 className="news-title">Foco</h1>}
-                />
+              </div>
+              <br/>
+              <div className="cardFoco">
+              <News
+                news={news?.filter(n=> n.cat === "foco").slice(0, 20)}
+                isLoading={loadingNews}
+                title={<h1 className="news-title">Foco</h1>}
+              />
+              </div>
 
             
             </div>

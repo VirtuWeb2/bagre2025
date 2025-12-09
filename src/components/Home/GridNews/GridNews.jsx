@@ -118,7 +118,7 @@ const GridNews = ({ news = [], title, isLoading, cols = 3, children, mode = "pag
             >
               <img
                 src={n.cover}
-                className="max-h-[200px] min-h-[200px] w-full rounded-md shadow-md mb-[.8rem] object-cover"
+                className="max-h-[200px] min-h-[200px] w-full rounded-md shadow-md mb-[.8rem] object-fill"
                 alt={n.title}
                 title={n.title}
                 width={200}
